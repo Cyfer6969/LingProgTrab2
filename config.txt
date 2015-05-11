@@ -1,0 +1,9 @@
+# Arquivo de configuracao
+# Notas atribuidas
+LINES		5
+EMPTY_SUBJECT	10
+EMPTY_BODY	10
+SENDER		5
+LINKS		10
+BADWORDS	10
+DATE		10
