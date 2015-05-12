@@ -1,5 +1,8 @@
 (ONLY WORKS ON UNIX DISTRIBUTIONS)
 ------
+
+Introduction
+--------
 This project consists of an email (file) manager, once you execute trab2,
 The following menu will appear :
 
@@ -48,3 +51,7 @@ Table
 | 3 	| ex3    | S3 	   |   14/7/2005  |     16 16  |   N	            |
 
 
+How to Compile
+----------------
+
+First always issue a "make clean" command, then simply issue a "make" command at terminal (from within the downloaded folder of course).
