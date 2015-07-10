@@ -50,7 +50,6 @@ class Files {
 		int total;
 		int spamCounter;
 		bool FULL;
-		bool TRANSPOST;
 		vector<vector<string> > email;
 		vector<string> emailTopic;
 };

@@ -53,7 +53,7 @@ int main(int argc, char *argv[], char **env)
 		switch(option) {
 			case(1):
 				cout << "Choose the ID of the email to be removed" << endl;
-				while (!(cin >> removeID) || removeID < 1 || removeID >= f.getTotal()) { cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n'); cout << "Enter only with an integer from 1 to " << f.getTotal()-1 <<endl;}
+				while (!(cin >> removeID) || removeID < 1 || removeID > f.getTotal()) { cin.clear(); cin.ignore(numeric_limits<streamsize>::max(), '\n'); cout << "Enter only with an integer from 1 to " << f.getTotal()-1 <<endl;}
 				if(remove(f.getPath(removeID).c_str()) != 0){
 					cout << "Error deleting file" << endl;
 				}
@@ -82,7 +82,7 @@ int main(int argc, char *argv[], char **env)
 			case(6):
 				cout << "Please Select Your Desired Email: ";
 				cin	 >> ID;
-				while (ID < 1 || ID > (f.getTotal() - 1)) {
+				while (ID < 1 || ID > f.getTotal()) {
 					cout << "Please Enter a Valid ID" << endl;
 					cin >> ID;
 				}

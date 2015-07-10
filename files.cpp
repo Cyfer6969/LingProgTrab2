@@ -4,8 +4,6 @@
 
 Files::Files(int topics, int total_){
 
-	FULL = false;
-	TRANSPOST = false;
 	Files::setTotal(total_);
 
 	email.resize(total);
@@ -37,30 +35,21 @@ Files::~Files(){
 
 void Files::printTable(){
 
-	if(!FULL){
-		if(!TRANSPOST){
-			std::cout << "Id \t From \t Subject \t "
-						 "R.Date \t R.Hour \t Spam"
-					  << std::endl;
-			for (int i = 1; i <= total; i++) {
 
-				std::cout << i << "\t"
-						  << email[i-1][FROM] << "\t"
-						  << email[i-1][SUBJECT] << "\t\t"
-						  << email[i-1][RDATE] << "\t\t"
-						  << email[i-1][RDATE_HOUR] << "\t\t"
-						  << email[i-1][SPAM] << "\t"
-						  << std::endl << std::endl;
-			}
-		} else{
-				super_Table(column); std::cout<<std::endl;
-				super_Table(email[column-1][FROM]); std::cout<<std::endl;
-				super_Table(email[column-1][SUBJECT]); std::cout<<std::endl;
-				super_Table(email[column-1][RDATE]); std::cout<<std::endl;
-				super_Table(email[column-1][RDATE_HOUR]); std::cout<<std::endl;
-				super_Table(email[column-1][SPAM]); std::cout<<std::endl;
-		  }
-	}
+		std::cout << "Id \t From \t Subject \t "
+					 "R.Date \t R.Hour \t Spam"
+				  << std::endl;
+		for (int i = 1; i <= total; i++) {
+
+			std::cout << i << "\t"
+					  << email[i-1][FROM] << "\t"
+					  << email[i-1][SUBJECT] << "\t\t"
+					  << email[i-1][RDATE] << "\t\t"
+					  << email[i-1][RDATE_HOUR] << "\t\t"
+					  << email[i-1][SPAM] << "\t"
+					  << std::endl << std::endl;
+		}
+
 }
 
 int Files::getTotal(){
@@ -147,7 +136,7 @@ int Files::getSpamCount(){
 	string aux;
 	for(int i = 0; i < total; i++){
 		aux = email[i][SPAM];
-		if(aux.find("S") != -1){
+		if(aux.find("Yes") != -1){
 			spamCounter++;
 		}
 	}
